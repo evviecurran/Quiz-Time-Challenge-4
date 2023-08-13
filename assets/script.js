@@ -1,4 +1,4 @@
-//References
+
 let timeLeft = document.querySelector(".time-left");
 let quizContainer = document.getElementById("container");
 let nextBtn = document.getElementById("next-button");
@@ -14,14 +14,14 @@ let scoreCount = 0;
 let count = 11;
 let countdown;
 
-//Questions and Options array
+//Array of questions and objects
 
 const quizArray = [
   {
     id: "0",
     question: "What does HTML stand for?",
     options: ["Home Tool Markup Language", "Hypertext Markup Language", "Hyperlinks and Text Markup Language"],
-    correct: "Hypertext Markup Language ",
+    correct: "Hypertext Markup Language",
   },
   {
     id: "1",
@@ -43,7 +43,7 @@ const quizArray = [
   },
 ];
 
-//Restart Quiz
+//Restart
 restart.addEventListener("click", () => {
   initial();
   displayContainer.classList.remove("hide");
@@ -58,10 +58,13 @@ nextBtn.addEventListener(
     questionCount += 1;
     //if last question
     if (questionCount == quizArray.length) {
+
       //hide question container and display score
       displayContainer.classList.add("hide");
       scoreContainer.classList.remove("hide");
-      //user score
+
+
+      //user score - needs improvement on keeping accurate score
       userScore.innerHTML =
         "Your score is " + scoreCount + " out of " + questionCount;
     } else {
@@ -102,7 +105,9 @@ const quizDisplay = (questionCount) => {
 
 //Quiz Creation
 function quizCreator() {
-  //randomly sort questions
+  //randomly sort questions- because it is random it is not giving back the correct score since 
+  //the correct answers are connected to their specific place- need to find a different way of finding this
+
   quizArray.sort(() => Math.random() - 0.5);
   //generate quiz
   for (let i of quizArray) {
@@ -130,6 +135,7 @@ function quizCreator() {
 }
 
 //Checker Function to check if option is correct or not
+//This is getting mixed up with placement and actual correct answer- 
 function checker(userOption) {
   let userSolution = userOption.innerText;
   let question =
@@ -182,3 +188,4 @@ window.onload = () => {
   startScreen.classList.remove("hide");
   displayContainer.classList.add("hide");
 };
+

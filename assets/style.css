@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Ubuntu", sans-serif;
   }
   body {
     background-color: plum;
@@ -90,17 +90,17 @@
     float: right;
   }
   .hide {
-    display: none;
+    display: none; 
   }
   .incorrect {
     background-color: #ffdde0;
-    color: #d32f2f;
-    border-color: #d32f2f;
+    color: #ce1212;
+    border-color: #d31212;
   }
   .correct {
     background-color: #e7f6d5;
-    color: #689f38;
-    border-color: #689f38;
+    color: #396314;
+    border-color: #2b4a10;
   }
   #user-score {
     font-size: 1.5em;
